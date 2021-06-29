@@ -26,8 +26,52 @@ Files in your Git repository folder can be in one of 2 states:
 * Untracked - files that are in your working directory, but not added to the repository
  When you first add files to an empty repository, they are all untracked. To get Git to track them, you need to stage them, or add them to the staging environment.
 
-Git Staging Environment: 
+Git Staging Environment:
 
 After we finish a part of work, it’s important to add the files in the Staging environment.
 
 - Git add (file name)
+
+Adding More Than One File To the Staging Environment:
+
+- Create a README file in the same working environment. extension for that is .md
+- Create a .css file and add some basic code about how the background of the HTML page should look.
+- Finally update the Test file by giving it instruction to refer the .css file for background info.
+
+- git add --all OR git add -A
+- git status
+
+
+Git Commit
+
+Adding commits keep track of our progress and changes as we work. Git considers each commit change point or "save point". It is a point in the project you can go back to if you find a bug, or want to make a change.
+
+When we commit, we should always include a message.
+
+- git commit -m “Hello I am Reema”
+
+Git Commit Without Staging
+
+It is possible to commit without staging. The -a option will automatically stage every changed, already tracked file.
+
+- git status —short
+
+* ?? - Untracked files
+* A - Files added to stage
+* M - Modified files
+* D - Deleted files
+
+- git commit -a -m “Updated the Test.html file with a new line”
+
+Skipping staging is not usually recommended.
+
+Git Commit Log
+
+To view the history of commits for a repository use log command
+ - git log
+
+
+ Git Help Command
+
+- git (command) -help
+- git help —all

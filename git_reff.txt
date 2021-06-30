@@ -34,9 +34,12 @@ After we finish a part of work, it’s important to add the files in the Staging
 
 Adding More Than One File To the Staging Environment:
 
-- Create a README file in the same working environment. extension for that is .md
-- Create a .css file and add some basic code about how the background of the HTML page should look.
-- Finally update the Test file by giving it instruction to refer the .css file for background info.
+- Create a README file in the same working environment. extension for that is
+.md
+- Create a .css file and add some basic code about how the background of the
+HTML page should look.
+- Finally update the Test file by giving it instruction to refer the .css file
+for background info.
 
 - git add --all OR git add -A
 - git status
@@ -44,7 +47,9 @@ Adding More Than One File To the Staging Environment:
 
 Git Commit
 
-Adding commits keep track of our progress and changes as we work. Git considers each commit change point or "save point". It is a point in the project you can go back to if you find a bug, or want to make a change.
+Adding commits keep track of our progress and changes as we work. Git considers
+each commit change point or "save point". It is a point in the project you can
+go back to if you find a bug, or want to make a change.
 
 When we commit, we should always include a message.
 
@@ -52,7 +57,8 @@ When we commit, we should always include a message.
 
 Git Commit Without Staging
 
-It is possible to commit without staging. The -a option will automatically stage every changed, already tracked file.
+It is possible to commit without staging. The -a option will automatically stage
+every changed, already tracked file.
 
 - git status —short
 

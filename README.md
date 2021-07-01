@@ -1,5 +1,7 @@
-Git First Project 
+Git First Project
 
-Creating a HTML file and learning all the commands of git. 
+Creating a HTML file and learning all the commands of git.
 
-Adding everyday learning as Text Files. 
+Adding everyday learning as Text Files.
+
+Git - Version Control

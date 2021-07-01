@@ -8,3 +8,92 @@ Git Pull from Github
 Pull is a combination of two commands:
 - Fetch
 - Merge
+
+To get all the change history of the origin for a branch
+- git fetch origin
+
+Merge the current branch with the branch master, on origin:
+- git merge origin/master
+
+Update the current branch from its origin using a single command
+- git pull origin
+
+push the current branch to its default remote origin
+- git push origin
+
+PULL BRANCH FROM GITHUB TO LOCAL Git
+
+- git pull (to keep our code up-to-date)
+- git status
+- git branch -a (to see all local and remote branches)
+- git branch -r (to see only remote branches)
+- git checkout html-skeleton
+- git pull (to see if is all up to date)
+
+
+PUSH BRANCH TO GITHUB
+
+- git checkout -b update.readme
+- git status
+- git add README.md
+- git commit -m "Updated README for Github Branches"
+- git push origin update.readme
+
+
+The GitHub flow works like this:
+
+1) Create a new Branch
+2) Make changes and add Commits - add the changes to your branch by commit.
+3) Open a Pull Request -A Pull Request notifies people you have changes ready
+for them to consider or review.You can ask others to review your changes or
+pull your contribution and merge it into their branch.
+4) Review
+5) Deploy - GitHub allows you to deploy from a branch for final testing in
+production before merging with the master branch.
+6) Merge
+
+Note: commit messages are very important! Let everyone know what has changed
+and why. Messages and comments make it so much easier for yourself and other
+people to keep track of changes.
+Note: GitHub shows new commit and feedback in the "unified Pull Request view".
+Note: You can add keywords to your pull request for easier searching!
+
+GIT GITHUB PAGES
+- On github create a new repository
+- name it Reemajha.github.io (Username.github.io)
+- Copy the link and git remote add gh-page url
+- Go to the master branch
+- git push gh-page master
+- In settings, go to pages, and click on the URL
+
+
+FORK A REPOSITORY
+
+A fork is a copy of a repository. This is useful when you want to contribute to
+someone else's project or start your own project based on theirs.
+
+CLONE A FORK FROM GITHUB
+
+A clone is a full copy of a repository, including all logging and versions of
+files.
+
+- git clone (URL)
+
+Now, we have full copy of the repository but we are not allowed to make
+changes to it.
+- git remote -v
+- git remote rename origin upstream
+- git remote add origin (URL of our own fork)
+- git remote -v
+
+Note: To specify a specific folder to clone to, add the name of the folder after
+ the repository URL, like this: git clone
+ https://github.com/w3schools-test/w3schools-test.github.io.git myfolder
+
+ Note: According to Git naming conventions, it is recommended to name your own
+ repository origin, and the one you forked for upstream
+
+Now we have 2 remotes:
+
+origin - our own fork, where we have read and write access
+upstream - the original, where we have read-only access

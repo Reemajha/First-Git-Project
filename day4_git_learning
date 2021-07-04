@@ -1,1 +1,44 @@
+Git Revert:
 
+revert is the command we use when we want to take a previous commit and add it
+as a new commit, keeping the log intact.
+
+Step 1: Find the previous commit
+Step 2: Use it to make a new commit
+
+- git commit -m "Just a regular update, definitely no accidents here"
+
+To avoid the very long log list, we are going to use the --oneline option, which
+ gives just one line per commit showing:
+
+The first seven characters of the commit hash
+the commit message
+
+- git log --oneline
+- git revert HEAD --no-edit
+
+Note: To revert to earlier commits, use git revert HEAD~x (x being a number. 1
+going back one more, 2 going back two more, etc.)
+
+revert the latest commit, skipping the commit message editor:
+git revert HEAD --no-edit
+
+revert the two last commits:
+git revert HEAD~1
+
+
+Git Reset
+
+reset is the command we use when we want to move the repository back to a
+previous commit, discarding any changes made after that commit.
+
+Step 1: Find the previous commit
+Step 2: Move the repository back to that step
+
+Even though the commits are no longer showing up in the log, it is not removed from Git.
+If you know the commit hash you can reset to it:
+ - git reset e56ba1f
+
+ Git Amend Commit Message
+ 
+ One of the simplest things you can do with --amend is to change a commit message.

@@ -40,5 +40,7 @@ If you know the commit hash you can reset to it:
  - git reset e56ba1f
 
  Git Amend Commit Message
- 
+
  One of the simplest things you can do with --amend is to change a commit message.
+
+ 

@@ -1,0 +1,77 @@
+
+NOTE: The git push command is followed by two parameters. The first parameter
+is the friendly name of the remote repository we defined in the first step.
+The second parameter is the name of the branch. By default all git repositories
+have a master branch where the code is worked on.
+
+Where git push allows you to push your changes to a remote repository, git pull
+works in the reverse fashion. git pull allows you to sync changes from a remote
+repository into your local version.
+
+The changes from the remote repository are automatically merge into the branch
+you're currently working on.
+
+Protip
+Use the command git log --grep="#1234" to find all the commits containing #1234
+
+The command git pull is a combination of two different commands, git fetch and git merge.
+Fetch downloads the changes from the remote repository into a separate branch
+named remotes/<remote-name>/<remote-branch-name>.
+The branch can be accessed using git checkout.
+
+Using git fetch is a great way to review the changes without affecting your
+current branch. The naming format of branches is flexible enough that you can
+have multiple remotes and branches with the same name and easily switch between
+them.
+
+If you want to revert in the middle of a merge and try again then use the
+command git reset --hard HEAD; to go back to your previous state.
+
+Use git commit --no-edit when you wish to use the default commit message.
+
+- git pull --no-edit origin master
+- git log --all --decorate --oneline
+
+Git Bisect
+The git bisect commands allows you to do a binary search of the repository looking
+ for which commit introduced the problem and the regression. In this step we'll
+ find the commit which forgot HTML tags in list.html.
+
+Git bisect takes a number of steps, execute the steps in order to see the results.
+
+Steps
+To enter into bisect mode you use the command git bisect start.
+
+Once in bisect mode you define your current checkout as bad using git bisect bad.
+This indicates that it contains the problem your searching to see when it was introduced.
+
+We've defined where a bad commit happened, we now need to define when the last
+known good commit was using git bisect good HEAD~5. In this case it was five commits ago.
+
+Step 3 will checkout the commit in-between bad and good commits. You can then
+check the commit, run tests etc to see if the bug exists. In this example you
+can check the contents using cat list.html
+
+This commit looks good as everything has correct HTML tags. We tell Git we're
+happy using git bisect good. This will automatically check out the commit in
+the middle of the last known good commit, as defined in step 5 and our bad commit.
+
+As we did before we need to check to see if the commit is good or bad. cat
+list.html
+
+This commit has missing HTML tags. Using git bisect bad will end the search and
+output the the related commit id.
+
+The result is that instead of searching five commits, we only searched two. On a
+ much larger timescale bisect can save you signifant time.
+
+GIT BLAME
+
+Running blame on a file will output who last touched each line.
+
+git blame list.html
+
+If we know the lines which we're concerned with then we can use the -L parameter
+to provide a range of lines to output.
+
+git blame -L 6,8 list.html
